@@ -19,6 +19,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var inputTextField: UITextField!
     
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //開啟程式後,自動讓鍵盤彈出
+//        inputTextField.becomeFirstResponder()
+    }
+    
+    
     @IBAction func makeAGuess(_ sender: UIButton) {
         print(answer)
         
@@ -66,12 +73,11 @@ class ViewController: UIViewController {
         
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        //開啟程式後,自動讓鍵盤彈出
-        inputTextField.becomeFirstResponder()
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
-
-
+    
+    
 }
 
