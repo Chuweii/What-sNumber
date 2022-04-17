@@ -1,24 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="What_is_the_number_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's the number?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wah-yX-yD0">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="174"/>
+                                <color key="backgroundColor" red="1" green="0.60335991341303197" blue="0.067840227808495079" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess a number between 1 to 100" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sD3-7u-sUj">
+                                <rect key="frame" x="0.0" y="174" width="414" height="104"/>
+                                <color key="backgroundColor" red="0.12554156253766968" green="0.43713121044877101" blue="1" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="19"/>
+                                <color key="textColor" red="0.90197908680000005" green="0.89574913599999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FEE-Lp-HUL">
+                                <rect key="frame" x="0.0" y="278" width="414" height="261"/>
+                                <color key="textColor" systemColor="linkColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="78"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QgQ-Jj-ffD">
+                                <rect key="frame" x="0.0" y="539" width="414" height="49"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Guess">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="makeAGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1f1-GW-nr0"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <constraints>
+                            <constraint firstItem="FEE-Lp-HUL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="274-7u-wMb"/>
+                            <constraint firstItem="wah-yX-yD0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="2Q9-jL-lNH"/>
+                            <constraint firstItem="QgQ-Jj-ffD" firstAttribute="top" secondItem="FEE-Lp-HUL" secondAttribute="bottom" id="4NO-fl-See"/>
+                            <constraint firstItem="QgQ-Jj-ffD" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0546875" id="6Ic-yg-vcM"/>
+                            <constraint firstItem="sD3-7u-sUj" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.116071" id="9OD-CP-mWr"/>
+                            <constraint firstItem="wah-yX-yD0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="DdG-qr-Yjw"/>
+                            <constraint firstItem="FEE-Lp-HUL" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.291295" id="FZz-Te-lOb"/>
+                            <constraint firstItem="wah-yX-yD0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Gw5-vV-dsK"/>
+                            <constraint firstItem="sD3-7u-sUj" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PVz-jf-Y7e"/>
+                            <constraint firstItem="FEE-Lp-HUL" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="SVG-3S-qyl"/>
+                            <constraint firstItem="QgQ-Jj-ffD" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Vif-am-gxA"/>
+                            <constraint firstItem="sD3-7u-sUj" firstAttribute="top" secondItem="wah-yX-yD0" secondAttribute="bottom" id="dMz-XV-xlf"/>
+                            <constraint firstItem="QgQ-Jj-ffD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hBz-2J-1FV"/>
+                            <constraint firstItem="sD3-7u-sUj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oNs-ug-JUj"/>
+                            <constraint firstItem="wah-yX-yD0" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.194196" id="vjX-ye-hMR"/>
+                            <constraint firstItem="FEE-Lp-HUL" firstAttribute="top" secondItem="sD3-7u-sUj" secondAttribute="bottom" id="zyJ-1J-ckQ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="inputTextField" destination="FEE-Lp-HUL" id="Mau-Mh-fAn"/>
+                        <outlet property="messageLabel" destination="sD3-7u-sUj" id="kJC-I6-3Ag"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="79.6875"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
